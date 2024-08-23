@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{product.product}}
+{% endblock %}
+
+{% block body %}
+    <div class="card text-center">
+        <div class="card-header">
+            <h1>{{product.product}}</h1>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{product.description}}</p>
+        </div>
+        <div class="card-footer text-muted">
+            Precio: {{product.price}}$
+        </div>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+        <a href="{{ path('edit_product', {'id':product.id}) }}" type="button" class="btn btn-success">Editar</a>
+        <a href="{{ path('delete_product', {'id':product.id}) }}" type="button" class="btn btn-danger">Borrar</a>
+    </div>
+{% endblock %}

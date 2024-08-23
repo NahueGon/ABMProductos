@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+    <h1>Productos</h1>
+    {% if products %}
+        <table class="table table-products table-hover table-striped table-sm table-responsive">
+            <thead class="table-dark pointer">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <th scope="row">{{product.id}}</th>
+                        <td>{{product.product}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.price}}</td>
+                        <td>
+                            <a href="{{ path('show_product', {'id':product.id}) }}" type="button" class="btn btn-primary">Ver</a>
+                            <a href="{{ path('edit_product', {'id':product.id}) }}" type="button" class="btn btn-success">Editar</a>
+                            <a href="{{ path('delete_product', {'id':product.id}) }}" type="button" class="btn btn-danger">Borrar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2>No hay Productos para mostrar</h2>
+    {% endif %}
+    <a href="{{ path('create_product') }}" type="button" class="btn btn-primary float-end">Agregar +</a>
+    
+{% endblock %}
