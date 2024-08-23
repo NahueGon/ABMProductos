@@ -14,7 +14,8 @@
 		name: products
 	
 	create:
-		Carga vista del form para crear productos, mas la logica para insertarlos a la bd.
+		Muestra el form para crear productos,
+  		mas la logica para insertarlos a la bd.
 		url: /products/create
 		name: create_product
 	
@@ -24,7 +25,7 @@
 		name: show_product
 	
 	edit:
-		Carga vista del form para editar el producto seleccionado con el boton de la vista index "editar",
+		Muestra el form para editar el producto seleccionado con el boton de la vista index "editar",
   		mas la logica para insertar los nuevos datos a la bd.
 		url: /products/edit/{id}
 		name: edit_product
