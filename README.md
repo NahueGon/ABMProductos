@@ -24,7 +24,8 @@
 		name: show_product
 	
 	edit:
-		Carga vista del form para editar el producto seleccionado con el boton de la vista index "editar", mas la logica para insertar los nuevos datos a la bd.
+		Carga vista del form para editar el producto seleccionado con el boton de la vista index "editar",
+  		mas la logica para insertar los nuevos datos a la bd.
 		url: /products/edit/{id}
 		name: edit_product
 	
