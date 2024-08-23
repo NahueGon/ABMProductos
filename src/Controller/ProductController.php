@@ -29,13 +29,14 @@ class ProductController extends AbstractController
     #[Route('/products/show/{id}', name: 'show_product')]
     public function show(Product $product)
     {
-        if (!$product) {
+        if (!$product)
+        {
             return $this->redirecttoRoute('products');
         }
 
         return $this->render('product/detail.html.twig',[
-			'product' => $product
-		]);
+            'product' => $product
+        ]);
 
     }
 
