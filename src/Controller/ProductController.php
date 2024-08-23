@@ -34,7 +34,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/products/vista/{id}', name: 'show_product')]
+    #[Route('/products/show/{id}', name: 'show_product')]
     public function show(Product $product){
         if (!$product) {
             return $this->redirecttoRoute('products');
